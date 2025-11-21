@@ -279,7 +279,7 @@ function! s:create_h1(fname) abort
   let header = ["---", "Title: ", hash, "Created: " . strftime ("%Y%m%d %H:%M:%S"), "Tags:", "---"]
   let refer = 'Refer:'
   let lnk = vimwiki#vars#get_global("lnk")
-  let parent_filename = vimwiki#vars#get_global("parent_filename")
+  let parent_filename = ["[[", vimwiki#vars#get_global("parent_filename"), "]]"]
 
   " Clause: don't insert header for index page
   if hash ==# vimwiki#vars#get_wikilocal('index', idx)
